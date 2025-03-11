@@ -9,7 +9,7 @@ def home():
 @app.get("/status")  
 def status():
     return {"status": "API is running"}
-    
+
 @app.post("/predict_vo2max")
 def predict_vo2max(pace: float, age: int, weight: float):
     X_train = np.array([[4.5, 25, 70], [5.0, 30, 75], [4.0, 20, 65]])
