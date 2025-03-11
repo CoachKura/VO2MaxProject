@@ -1,13 +1,11 @@
 from fastapi import FastAPI
-import numpy as np
-from sklearn.linear_model import LinearRegression
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/")  # This makes the root URL return a response
 def home():
     return {"message": "Welcome to VO2 Max API"}
-
+    
 @app.post("/predict_vo2max")
 def predict_vo2max(pace: float, age: int, weight: float):
     X_train = np.array([[4.5, 25, 70], [5.0, 30, 75], [4.0, 20, 65]])
