@@ -2,9 +2,13 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")  # This makes the root URL return a response
+@app.get("/")  
 def home():
     return {"message": "Welcome to VO2 Max API"}
+
+@app.get("/status")  
+def status():
+    return {"status": "API is running"}
     
 @app.post("/predict_vo2max")
 def predict_vo2max(pace: float, age: int, weight: float):
